@@ -1,0 +1,20 @@
+
+services:
+  - type: web
+    name: arslen-smm-bot
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
+      - key: API_KEY
+        sync: false
+      - key: API_URL
+        value: https://bot.tota.click/api/v2
+      - key: OWNER_ID
+        sync: false
+      - key: POINTS_PER_USD
+        value: "1000"
